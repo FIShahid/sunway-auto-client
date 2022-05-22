@@ -1,72 +1,60 @@
 [
     {
         "_id":1 ,
-        "category": "Laptop",
-        "name": "Apple Macbook Pro",
-        "seller": "Dazzle",
-        "price": 2400,
-        "stock": 50,
+        "name": "Headlight for Mazda 3 2004 SCH115",
+        "price": 1200,
+        "stock": 5000,
         "minOrder": 100,
-        "img": "https://i.ibb.co/PgYTTLZ/macpro.jpg",
+        "img": "https://i.ibb.co/X8zXYkn/headlight.jpg",
 
-        "description": "MacBook Pro with the incredibly powerful M1 Pro or M1 Max chip. Amazing battery life. And a brilliant Liquid Retina XDR display. Buy online now."
+        "description": "Suitable for vehicle: 2004-2006 Mazda 3 GS/GT/GX, 2004-2009 Mazda 3 S/I"
       },
       {
         "_id":2 ,
-        "category": "Mobile",
-        "name": "iPone 13 Pro Max",
-        "seller": "Dazzle",
-        "price": 900,
-        "stock": 100,
+        "name": "Cylinder Piston Kit Honda CG200 200CC SMCK04",
+        "price": 1900,
+        "stock": 2000,
         "minOrder": 100,
-        "img": "https://i.ibb.co/7XbdMGY/pexels-soulful-pizza-3707744.jpg",
+        "img": "https://i.ibb.co/Lvx1Msn/Cylinder-Piston-Kit.jpg",
 
-        "description": "Apple iPhone 13 Pro smartphone. Announced Sep 2021. Features 6.1″ display, Apple A15 Bionic chipset, 3095 mAh battery, 1024 GB storage, 6 GB RAM"
+        "description": "65.5mm Cylinder & Piston Set & Gasket Top End Kit All Sets For Honda CG200 200CC"
       },
       {
         "_id":3 ,
-        "category": "Mobile",
-        "name": "Samsung s21 ultra",
-        "seller": "Appwhale",
-        "price": 1000,
-        "stock": 120,
+        "name": "Clutch Pressure Plate for Mercedes-Benz MK",
+        "price": 1500,
+        "stock": 1200,
         "minOrder": 100,
-        "img": "https://i.ibb.co/Mc8pLyC/galaxys21-ultra-2048x1536-1.jpg",
-        "description": "Samsung Galaxy S21 Ultra 5G ; Internal, 128GB 12GB RAM, 256GB 12GB RAM, 512GB 12GB RAM, 512GB 16GB RAM ; Main Camera, Quad ; Features, LED flash, auto-HDR"
+        "img": "https://i.ibb.co/w7M2QWp/clutch.jpg",
+        "description": "Fitment Vehicle Mercedes-Ben19812-2005/12. Part number: 3482 081 232"
       },
       {
         "_id":4 ,
-        "category": "Laptop",
-        "name": "HP Pavilion 15",
-        "seller": "Ryans",
-        "price": 2229,
-        "stock": 80,
+        "name": "Voltage Regulator for Harley Davidson 74505-97 SMR25",
+        "price": 800,
+        "stock": 3000,
         "minOrder": 100,
-        "img": "https://i.ibb.co/VCt06Hc/HP-Pavilion.png",
+        "img": "https://i.ibb.co/tDLF26t/electric.jpg",
        
-        "description": "HP Pavilion 15-eg1678TU powered by Intel Core i5-1155G7 (8M Cache, 2.50 GHz up to 4.50 GHz) and Intel Iris Xe Graphics. This Laptop comes with 8 GB DDR4-3200 MHz RAM, 512 GB PCIe NVMe M.2 SSD. This Pavilion laptop designed with 39.6 cm (15.6) diagonal, FHD (1920 x 1080), IPS, micro-edge, anti-glare, 250 nits, 45% NTSC. This Laptop comes with silver color "
+        "description":"Fit for 1997-2001. Harley-Davidson alltourinos 12 Volt, Shunt-type, 14.4 volt set point."
       },
       {
         "_id":5 ,
-        "category": "Laptop",
-        "name": "Dell XPS 13",
-        "seller": "Ryans",
-        "price": 1200,
-        "stock": 60,
+        "name": "Top End Gasket for Triumph 650CC T120 SMG01",
+        "price": 600,
+        "stock": 6500,
         "minOrder": 100,
-        "img": "https://i.ibb.co/pyXDqVR/ra-dragon-2n-Ce-Ve-FWA-c-unsplash.jpg",
-        "description": "11th Gen Intel® Core™ i7-11800H (24 MB cache, 8 cores, 16 threads, up to 4.60 GHz Turbo).16 GB, 2 x 8 GB, DDR4, 3200 MHz.512 GB, M.2, PCIe NVMe, SSD. Display 15.6, 3.5K 3456x2160, 60Hz, OLED, Touch, Anti-Reflect, 400 nit, InfinityEdge"
+        "img": "https://i.ibb.co/KNFR62t/gasket.jpg",
+        "description": "All combination of push rod seals and rocker box base gaskets.A solid copper head gasket."
       },
       {
         "_id":6 ,
-        "category": "camera",
-        "name": "Sony A1",
-        "seller": "Appwhale",
-        "price": 800,
-        "stock": 39,
+        "name": "OE K2288 brake shoe set for Toyota SCBS9",
+        "price": 500,
+        "stock": 3900,
         "minOrder": 100,
-        "img": "https://i.ibb.co/rsmKdHM/best-sony-camera-01.jpg",
-        "description": "50 megapixel full-frame sensor 8K video.5-axis IBIS 30fps burst shooting Bird-eye AF .8K video with no overheating. Amazingly fast burst shooting with no blackout.High resolution sensor"
+        "img": "https://i.ibb.co/hFP02nM/breakshoe.jpg",
+        "description": "Material: semi-metal,non-asbestos,ceramic.Friction: 0.35~0.45.Temperature: 0~350 ℃"
       }
     
 ]

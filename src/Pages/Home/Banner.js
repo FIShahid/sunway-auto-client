@@ -9,32 +9,54 @@ const Banner = () => {
         <div>
             <div class="carousel w-full">
                 <div id="slide1" class="carousel-item relative w-full">
-                    <img src={banner1} class="w-full"/> /
-                        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide4" class="btn btn-circle">❮</a>
-                            <a href="#slide2" class="btn btn-circle">❯</a>
+                    <img src={banner1} class="w-full" /> /
+
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+
+
+                        <a href="#slide4" class="btn btn-circle">❮</a>
+                        <div>
+                            <h1 className='text-4xl font-bold text-white '>Welcome to Sunway Auto Parts</h1>
+
                         </div>
+                        <a href="#slide2" class="btn btn-circle">❯</a>
+
+                    </div>
                 </div>
                 <div id="slide2" class="carousel-item relative w-full">
-                    <img src={banner2} class="w-full"/> /
-                        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide1" class="btn btn-circle">❮</a>
-                            <a href="#slide3" class="btn btn-circle">❯</a>
+                    <img src={banner2} class="w-full" /> /
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide1" class="btn btn-circle">❮</a>
+                        <div>
+                            <h1 className='text-4xl font-bold text-white '>OEM and Aftermarket
+                                Auto Parts Wholesale</h1>
+
                         </div>
+                        <a href="#slide3" class="btn btn-circle">❯</a>
+                    </div>
                 </div>
                 <div id="slide3" class="carousel-item relative w-full">
-                    <img src={banner3} class="w-full"/> /
-                        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide2" class="btn btn-circle">❮</a>
-                            <a href="#slide4" class="btn btn-circle">❯</a>
+                    <img src={banner3} class="w-full" /> /
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2" class="btn btn-circle">❮</a>
+                        <div>
+                            <h1 className='text-4xl font-bold text-white '>Auto, Truck, and Motorcycle Parts B2B Supplier</h1>
+
                         </div>
+                        <a href="#slide4" class="btn btn-circle">❯</a>
+                    </div>
                 </div>
                 <div id="slide4" class="carousel-item relative w-full">
-                    <img src={banner4} class="w-full"/> /
-                        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide3" class="btn btn-circle">❮</a>
-                            <a href="#slide1" class="btn btn-circle">❯</a>
+                    <img src={banner4} class="w-full" /> /
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide3" class="btn btn-circle">❮</a>
+                        <div>
+                            <h1 className='text-4xl font-bold text-white '>OE Specification
+Auto Parts</h1>
+
                         </div>
+                        <a href="#slide1" class="btn btn-circle">❯</a>
+                    </div>
                 </div>
             </div>
         </div>

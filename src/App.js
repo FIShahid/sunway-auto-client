@@ -8,6 +8,7 @@ import Review from './Pages/Home/Review'
 import Blog from './Pages/Home/Blog'
 import Login from './Pages/Login/Login'
 import NotFound from './Pages/Shared/NotFound';
+import Footer from './Pages/Shared/Footer';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
       
     </div>
   );
