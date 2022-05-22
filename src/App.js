@@ -3,12 +3,13 @@ import './App.css';
 import Navbar from './Pages/Shared/Navbar';
 import Home from './Pages/Home/Home';
 import About from './Pages/Home/About';
-import Product from './Pages/Product/Product'
+import Product from './Pages/Product/Products'
 import Review from './Pages/Home/Review'
 import Blog from './Pages/Home/Blog'
 import Login from './Pages/Login/Login'
 import NotFound from './Pages/Shared/NotFound';
 import Footer from './Pages/Shared/Footer';
+import SignUp from './Pages/Login/SignUp';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='blog' element={<Blog></Blog>}></Route>
         <Route path='about' element={<About></About>}></Route>
         <Route path='login' element={<Login></Login>}></Route>
+        <Route path='signUp' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
