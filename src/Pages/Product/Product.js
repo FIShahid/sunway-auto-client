@@ -10,9 +10,9 @@ const Product = ({ product }) => {
     }
     return (
         <div >
-            <div class="card lg:max-w-lg bg-base-100 shadow-xl">
-                <figure class="px-10 pt-10">
-                    <img src={img} alt="Shoes" class="rounded-xl" />
+            <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+                <figure className="px-10 pt-10">
+                    <img src={img} alt="Shoes" className="rounded-xl" />
                 </figure>
                 <h4 className='px-12 mt-4 text-xl font-bold text-info'>{name}</h4>
                 <h5 className='text-warning font-bold px-12'>Price: ${price}</h5>
@@ -20,9 +20,9 @@ const Product = ({ product }) => {
                 <h5 className='text-error font-bold px-12'>Minimum Order: ${minOrder}</h5>
                 
                     <p className='px-12'>Description: {description}</p>
-                <div class="card-body items-center text-center">
-                    <div class="card-actions">
-                        <button onClick={()=>navigateToParts(_id)} class="btn btn-primary w-60">Buy Now</button>
+                <div className="card-body items-center text-center">
+                    <div className="card-actions">
+                        <button onClick={()=>navigateToParts(_id)} className="btn btn-primary w-60">Buy Now</button>
                     </div>
                 </div>
             </div>
