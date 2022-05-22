@@ -6,7 +6,13 @@ const Products = () => {
     const [products , setProducts] = useState([]);
 
     useEffect(()=>{
-        fetch('product.json')
+        const url = 'http://localhost:5000/parts'
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[])
