@@ -11,6 +11,7 @@ import NotFound from './Pages/Shared/NotFound';
 import Footer from './Pages/Shared/Footer';
 import SignUp from './Pages/Login/SignUp';
 import RequireAuth from './Pages/Login/RequireAuth'
+import Parts from './Pages/Product/Parts';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path='/product/:ProductId' element={<RequireAuth><Product></Product></RequireAuth>}></Route>
+        <Route path='/parts/:partsId' element={<RequireAuth><Parts></Parts></RequireAuth>}></Route>
         <Route path='review' element={<Review></Review>}></Route>
         <Route path='blog' element={<Blog></Blog>}></Route>
         <Route path='about' element={<About></About>}></Route>
