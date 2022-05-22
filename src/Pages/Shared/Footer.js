@@ -30,7 +30,7 @@ const Footer = () => {
                         <label class="label">
                             <span class="label-text">Enter your email address</span>
                         </label>
-                        <div class="relative">
+                        <div class="relative sm:hidden">
                             <input type="text" placeholder="username@site.com" class="input input-bordered w-full pr-16" />
                             <button class="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
                         </div>
