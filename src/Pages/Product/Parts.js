@@ -37,6 +37,7 @@ const Parts = () => {
         setNum(num - 1);
        }
     }
+    
    let handleChange = (e)=>{
      setNum(e.target.value);
     }
@@ -49,6 +50,37 @@ const Parts = () => {
         toast.error(" We don't Have Enough Product at the moment!!! ")
 
     }
+
+    const updateStock = id => {
+        console.log(num);
+        const newStock = (stock - parseInt(num));
+        if (isNaN(newStock)) {
+            setError("Input a Number")
+            return
+        }
+        else {
+            setError('')
+        }
+        console.log(parseFloat(newStock));
+        const update = { ...product, stock: newStock }
+        const url = `http://localhost:5000/parts/${partsId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(update)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setProduct({ ...product, stock: newStock })
+                
+
+            })
+
+    }
+
+
     return (
         <div>
             <h2 className='text-3xl font-bold text-center mt-4 mb-2'>Purchase Now!</h2>
@@ -61,13 +93,15 @@ const Parts = () => {
                     <p className='font-bold'>Available Product: {stock}</p>
                     <p className='font-bold'>Minimum Order Quantity: {minOrder}</p>
                     <p>Description: {description}</p>
-                    <div class="form-control">
+                    <div class="form-control mx-auto">
                         <label class="label">
-                            <span class="label-text">Enter amount</span>
+                            <h4 className="font-bold mx-auto">Enter Product Quantity</h4>
                         </label>
                         <label class="input-group">
                             <button disabled={num>=stock} onClick={incNum}  class="btn "><i className="fa fa-plus fa-2x"></i></button>
-                            <input  type="text" placeholder="100" value={num} onChange={handleChange} class="input input-bordered" />
+                            <input  type="text" placeholder="100" value={num} onChange={handleChange } class="input input-bordered" />
+                            <p>{error}</p>
+
                             
                   {
         <button onClick={decNum} disabled={num<minOrder} class="btn "><i className="fa fa-minus fa-2x"></i></button>
@@ -78,7 +112,7 @@ const Parts = () => {
                    <div>
                        
                    <div class="card-actions justify-center">
-                        <button className="btn btn-primary" disabled ={num<=minOrder || num>=stock}>Buy Now</button>
+                        <button className="btn btn-primary" disabled ={num<minOrder || num>stock} onClick={() => updateStock(_id)}  >Click Here to Place Order</button>
                     </div>
                    </div>
                 </div>
