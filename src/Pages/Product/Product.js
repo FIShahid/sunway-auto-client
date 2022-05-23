@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Product = ({ product }) => {
     const { _id, name, img, stock, minOrder, description, price } = product;
-
+    
     const navigate = useNavigate()
     const navigateToParts =id =>{
         navigate(  `/parts/${_id}`)

@@ -4,6 +4,7 @@ import Product from './Product';
 const Products = () => {
 
     const [products , setProducts] = useState([]);
+    
 
     useEffect(()=>{
         const url = 'http://localhost:5000/parts'
@@ -24,6 +25,7 @@ const Products = () => {
                 products.map(product =><Product
                 key={product._id}
                 product={product}
+                
                 ></Product>)
             }
            </div>

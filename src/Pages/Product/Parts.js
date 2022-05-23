@@ -1,124 +1,133 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 
 
-
 const Parts = () => {
+
     const { partsId } = useParams()
     const [product, setProduct] = useState({});
     const [error, setError] = useState('');
     const { _id, name, img, stock, minOrder, description, price } = product;
     const [user, loading, authError] = useAuthState(auth);
 
+    const [newQuantity, setNewQuantity] = useState('')
+
+    console.log(parseInt(newQuantity))
+
+    const newparsedQuantity = parseInt(newQuantity)
+
+   
+    
+
+    const [purchase, setPurchase] = useState([]);
+
+
+
+    // const { minOrderQuantity, availableQuantity, pricePerUnit, name } = purchase
+
+    const minParsedQuantity = parseInt(purchase.minOrderQuantity)
+    const availableParsedQuantity = parseInt(stock)
+
 
     useEffect(() => {
-        if (partsId) {
-            const url = `http://localhost:5000/parts/${partsId}`;
-            fetch(url)
-                .then(res => res.json())
-                .then(data => setProduct(data))
-
-        }
-    }, []);
-    let [num, setNum]= useState(100);
-    let incNum =()=>{
-      if(num)
-      {
-      setNum(Number(num)+1);
-      
-      }
-    };
-    let decNum = () => {
-       if(num>100)
-       {
-        setNum(num - 1);
-       }
-    }
-    
-   let handleChange = (e)=>{
-     setNum(e.target.value);
-    }
-    
-    if(num<minOrder){
-        toast.error(" You Have to Buy Minimum Quantity")
-
-    }
-    if(num>=stock){
-        toast.error(" We don't Have Enough Product at the moment!!! ")
-
-    }
-
-    const updateStock = id => {
-        console.log(num);
-        const newStock = (stock - parseInt(num));
-        if (isNaN(newStock)) {
-            setError("Input a Number")
-            return
-        }
-        else {
-            setError('')
-        }
-        console.log(parseFloat(newStock));
-        const update = { ...product, stock: newStock }
         const url = `http://localhost:5000/parts/${partsId}`;
-        fetch(url, {
-            method: 'PUT',
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setProduct(data))
+    }, [])
+
+
+    const handleQuantityChange = (event) => {
+
+        const quantity = event.target.value;
+        console.log(quantity)
+
+
+
+        setNewQuantity(quantity)
+    }
+
+    const handleQuantity = (event) => {
+        event.preventDefault()
+
+        const address = event.target.address.value
+        const phone = event.target.phone.value
+
+        const orders = {
+
+            partsName: name,
+            userName: user.displayName,
+            userEmail: user.email,
+            orderQuantity: minOrder,
+            pricePerUnit: price,
+            address: address,
+            phone: phone,
+
+        }
+
+
+        // post to server
+
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+
             },
-            body: JSON.stringify(update)
+            body: JSON.stringify(orders)
+
         })
+
             .then(res => res.json())
             .then(data => {
-                setProduct({ ...product, stock: newStock })
-                
-
+                console.log(data)
+                if (data.insertedId) {
+                    toast('success')
+                }
             })
 
+
+    }
+    let showErrorMessage
+    if (newparsedQuantity < minParsedQuantity) {
+        showErrorMessage = <p className='text-red-500 text-sm absolute'>Please type minimum Order</p>
+    }
+
+    if (newparsedQuantity > availableParsedQuantity) {
+        showErrorMessage = <p className='text-red-500 text-sm absolute'>Not available</p>
     }
 
 
     return (
-        <div>
-            <h2 className='text-3xl font-bold text-center mt-4 mb-2'>Purchase Now!</h2>
+        <div className='w-2/3 mx-auto'>
+            <div class="hero min-h-screen bg-base-200">
+                <div class="hero-content text-left flex-col lg:flex-row border border-gray-500">
+                    <img src={img} class="max-w-sm rounded-lg shadow-2xl" alt="" />
+                    <div>
 
-            <div class="card card-compact mx-auto lg:max-w-lg bg-base-100 shadow-xl">
-                <figure><img src={img} alt="Shoes" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">{name}</h2>
-                    <p className='font-bold'>Price: ${price}</p>
-                    <p className='font-bold'>Available Product: {stock}</p>
-                    <p className='font-bold'>Minimum Order Quantity: {minOrder}</p>
-                    <p>Description: {description}</p>
-                    <div class="form-control mx-auto">
-                        <label class="label">
-                            <h4 className="font-bold mx-auto">Enter Product Quantity</h4>
-                        </label>
-                        <label class="input-group">
-                            <button disabled={num>=stock} onClick={incNum}  class="btn "><i className="fa fa-plus fa-2x"></i></button>
-                            <input  type="text" placeholder="100" value={num} onChange={handleChange } class="input input-bordered" />
-                            <p>{error}</p>
 
-                            
-                  {
-        <button onClick={decNum} disabled={num<minOrder} class="btn "><i className="fa fa-minus fa-2x"></i></button>
-                  }
-                        </label>
+
+                        <form onSubmit={handleQuantity} action="">
+                            <h1 class="text-3xl font-bold ">{name}</h1>
+                            <p class="py-1">Your Name : {user.displayName} </p>
+                            <p class="py-1">Your Email : {user.email} </p>
+                            <p class="py-1">Minimum order : {minOrder}</p>
+                            <input type="number" name="quantity" placeholder='Type Order Quantity' id="" onChange={handleQuantityChange} required />
+                            {showErrorMessage}
+                            <br /><br />
+                            <p class="py-1">Available order : {stock} </p>
+                            <p class="py-1">Price per Unit : {price} </p><br />
+                            <input type="text" name="address" placeholder='Type address' id="" required /><br /><br />
+                            <input type="number" name="phone" placeholder='Type phone' id="" required /><br /><br />
+                            <input disabled={newparsedQuantity < minParsedQuantity || newparsedQuantity > availableParsedQuantity} class="btn btn-sm" type="submit" value=" place" />
+                        </form>
+
                     </div>
-
-                   <div>
-                       
-                   <div class="card-actions justify-center">
-                        <button className="btn btn-primary" disabled ={num<minOrder || num>stock} onClick={() => updateStock(_id)}  >Click Here to Place Order</button>
-                    </div>
-                   </div>
                 </div>
             </div>
-
-
         </div>
     );
 };
