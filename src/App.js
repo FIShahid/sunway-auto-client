@@ -8,10 +8,12 @@ import Review from './Pages/Home/Review'
 import Blog from './Pages/Home/Blog'
 import Login from './Pages/Login/Login'
 import NotFound from './Pages/Shared/NotFound';
-import Footer from './Pages/Shared/Footer';
+
 import SignUp from './Pages/Login/SignUp';
 import RequireAuth from './Pages/Login/RequireAuth'
 import Parts from './Pages/Product/Parts';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -28,7 +30,8 @@ function App() {
         <Route path='signUp' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
-      <Footer></Footer>
+      <ToastContainer></ToastContainer>
+     
       
     </div>
   );

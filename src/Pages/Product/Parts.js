@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 
 
 
@@ -22,144 +23,66 @@ const Parts = () => {
 
         }
     }, []);
-
-    const [input, setInput] = useState(0)
-    const inputValue = e => {
-        e.preventDefault()
-
-        setInput(e.target.value);
+    let [num, setNum]= useState(100);
+    let incNum =()=>{
+      if(num)
+      {
+      setNum(Number(num)+1);
+      
+      }
+    };
+    let decNum = () => {
+       if(num>100)
+       {
+        setNum(num - 1);
+       }
+    }
+   let handleChange = (e)=>{
+     setNum(e.target.value);
+    }
+    
+    if(num<minOrder){
+        toast.error(" You Have to Buy Minimum Quantity")
 
     }
+    if(num>=stock){
+        toast.error(" We don't Have Enough Product at the moment!!! ")
 
-    const increaseStock = id => {
-        console.log(input);
-        const newStock = (stock + parseInt(input));
-        if (isNaN(newStock)) {
-            setError("Input a Number")
-            return
-        }
-        else {
-            setError('')
-        }
-        console.log(parseFloat(newStock));
-        const update = { ...product, stock: newStock }
-        const url = `http://localhost:5000/parts/${partsId}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(update)
-        })
-            .then(res => res.json())
-            .then(data => {
-                setProduct({ ...product, stock: newStock })
-                
-
-            })
-
-    }
-
-    const decreaseStock = id => {
-        console.log(input);
-        const newStock = (stock - parseInt(input));
-        if (isNaN(newStock)) {
-            setError("Input a Number")
-            return
-        }
-        else {
-            setError('')
-        }
-        console.log(parseFloat(newStock));
-        const update = { ...product, stock: newStock }
-        const url = `http://localhost:5000/parts/${partsId}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(update)
-        })
-            .then(res => res.json())
-            .then(data => {
-                setProduct({ ...product, stock: newStock })
-                
-
-            })
-
-    }
-
-
-    const handleBooking = event => {
-        event.preventDefault();
     }
     return (
         <div>
-            <h2 className='text-3xl font-bold text-center mt-8 '>Purchase Now!</h2>
-            <div class="hero h-screen ">
-                <div class="hero-content flex-col lg:flex-row gap-10">
-                    <div>
-                        <img src={img} class="max-w-lg rounded-lg shadow-2xl" alt='' />
-                        <div className='card-body shadow-lg bg-white'>
-                            <h4 className='text-xl font-semibold'>{name}</h4>
-                            <p className='font-bold'>Price: $ {price}</p>
-                            <p className='font-bold'>Product Available: {stock}</p>
-                            <p className='font-bold'>Minimum Order: {minOrder}</p>
-                            <p className=''>{description}</p>
-                        </div>
+            <h2 className='text-3xl font-bold text-center mt-4 mb-2'>Purchase Now!</h2>
+
+            <div class="card card-compact mx-auto lg:max-w-lg bg-base-100 shadow-xl">
+                <figure><img src={img} alt="Shoes" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">{name}</h2>
+                    <p className='font-bold'>Price: ${price}</p>
+                    <p className='font-bold'>Available Product: {stock}</p>
+                    <p className='font-bold'>Minimum Order Quantity: {minOrder}</p>
+                    <p>Description: {description}</p>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Enter amount</span>
+                        </label>
+                        <label class="input-group">
+                            <button disabled={num>=stock} onClick={incNum}  class="btn "><i className="fa fa-plus fa-2x"></i></button>
+                            <input  type="text" placeholder="100" value={num} onChange={handleChange} class="input input-bordered" />
+                            
+                  {
+        <button onClick={decNum} disabled={num<minOrder} class="btn "><i className="fa fa-minus fa-2x"></i></button>
+                  }
+                        </label>
                     </div>
 
-
-                    <div className='"card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100"'>
-                        <div className='card-body'>
-                            <h4 className='text-xl font-bold mx-auto'>Order Information</h4>
-                            <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
-
-                                <input type="text" name="name" disabled value={user?.displayName || ''} className="input input-bordered w-full max-w-xs" />
-                                <input type="email" name="email" disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs" />
-                                <input type="text" name="phone" placeholder="Phone Number" className="input input-bordered w-full max-w-xs" />
-
-                                <input type="text" placeholder="Enter Your Address" class="input input-bordered input-lg w-full max-w-xs" />
-
-                                <input type="submit" value="Purchase" className="btn btn-secondary w-full max-w-xs" />
-                                <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Increase Quantity</span>
-                            </label>
-                            <label class="input-group">
-                                <input onChange={inputValue} type="text" placeholder="0.01" class="input input-bordered" />
-                                <p>{error}</p>
-                                <button  onClick={() => increaseStock(_id)} class="btn">Increase</button>
-                            </label>
-                        </div>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Decrease Quantity</span>
-                            </label>
-                            <label class="input-group">
-                                <input type="text" placeholder="0.01" class="input input-bordered" />
-                                <button onClick={() => decreaseStock(_id)} class="btn">Decrease</button>
-                            </label>
-                        </div>
-                            </form>
-                        </div>
-
-                        
-
+                   <div>
+                       
+                   <div class="card-actions justify-center">
+                        <button className="btn btn-primary" disabled ={num<=minOrder || num>=stock}>Buy Now</button>
                     </div>
-                    
+                   </div>
                 </div>
-                
-
             </div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
 
 
         </div>
