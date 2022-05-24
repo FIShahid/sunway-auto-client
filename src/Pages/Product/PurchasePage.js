@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 
 
-const Parts = () => {
+const PurchasePage = () => {
 
     const { partsId } = useParams()
     const [product, setProduct] = useState({});
@@ -24,11 +24,7 @@ const Parts = () => {
 
     const [purchase, setPurchase] = useState([]);
 
-
-
-    // const { minOrderQuantity, availableQuantity, pricePerUnit, name } = purchase
-
-    const minParsedQuantity = parseInt(purchase.minOrderQuantity)
+    const minParsedQuantity = parseInt(minOrder)
     const availableParsedQuantity = parseInt(stock)
 
 
@@ -57,7 +53,7 @@ const Parts = () => {
         const phone = event.target.phone.value
 
         const orders = {
-
+            orderId:_id,
             partsName: name,
             userName: user.displayName,
             userEmail: user.email,
@@ -132,4 +128,4 @@ const Parts = () => {
     );
 };
 
-export default Parts;
+export default PurchasePage;
