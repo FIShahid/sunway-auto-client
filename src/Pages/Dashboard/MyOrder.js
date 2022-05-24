@@ -22,7 +22,7 @@ const MyOrder = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Name</th>
+                            <th>Customer Name</th>
                             <th>Email</th>
                             <th>Product Name</th>
                             <th>Order Quantity</th>
@@ -31,8 +31,8 @@ const MyOrder = () => {
                     </thead>
                     <tbody>
                         {
-                            myOrders.map(orderList =><tr>
-                                <th>1</th>
+                            myOrders.map((orderList , index) =><tr>
+                                <th>{index + 1}</th>
                                 <td>{orderList.userName}</td>
                                 <td>{orderList.userEmail}</td>
                                 <td>{orderList.partsName}</td>
