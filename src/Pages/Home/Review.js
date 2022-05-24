@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 
 const Review = () => {
-    const [review, setReview] = useState([]);
+    const [review, setReview ] = useState([]);
 
     useEffect(() => {
         const url = 'http://localhost:5000/review'
@@ -14,6 +14,7 @@ const Review = () => {
         })
             .then(res => res.json())
             .then(data => setReview(data))
+        
     }, [])
 
 
