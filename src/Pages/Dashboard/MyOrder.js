@@ -26,7 +26,8 @@ const MyOrder = () => {
                             <th>Email</th>
                             <th>Product Name</th>
                             <th>Order Quantity</th>
-                            <th></th>
+                            <th>Price/unit</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,6 +38,7 @@ const MyOrder = () => {
                                 <td>{orderList.userEmail}</td>
                                 <td>{orderList.partsName}</td>
                                 <td>{orderList.orderQuantity}</td>
+                                <td>{orderList.pricePerUnit}</td>
                                 <td><button className="btn btn-sm">Cancel</button></td>
                             </tr>)
                         }
