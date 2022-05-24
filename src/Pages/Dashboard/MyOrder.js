@@ -16,8 +16,8 @@ const MyOrder = () => {
     return (
         <div>
             <h2>My Order : {myOrders.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                    
                     <thead>
                         <tr>
@@ -31,13 +31,13 @@ const MyOrder = () => {
                     </thead>
                     <tbody>
                         {
-                            myOrders.map((orderList , index) =><tr>
+                            myOrders.map((orderList , index) =><tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{orderList.userName}</td>
                                 <td>{orderList.userEmail}</td>
                                 <td>{orderList.partsName}</td>
                                 <td>{orderList.orderQuantity}</td>
-                                <td><button class="btn btn-sm">Cancel</button></td>
+                                <td><button className="btn btn-sm">Cancel</button></td>
                             </tr>)
                         }
                     

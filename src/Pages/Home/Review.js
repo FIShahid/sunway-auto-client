@@ -25,8 +25,8 @@ const Review = () => {
 
                 {review.map((r, index) => <div key={index} className="card w-96 bg-base-100 shadow-xl image-full">
                     <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
-                    <div class="card-body">
-                        <h2 class="card-title">{r.name}</h2>
+                    <div className="card-body">
+                        <h2 className="card-title">{r.name}</h2>
                         <p>{r.description}</p>
                         <p>Ratings: {r.rating}/5</p>
                     </div>
