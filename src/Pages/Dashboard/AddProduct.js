@@ -9,21 +9,21 @@ const AddProduct = () => {
 
     // const { data: services, isLoading } = useQuery('services', () => fetch('http://localhost:5000/service').then(res => res.json()))
 
-    // const imageStorageKey='4295ac4d47b569312bea67b440cdbdbb';
+    const imageStorageKey='32dcff4e41b891e23cefa5324ac64d73';
 
   
     const onSubmit = async data => {
         console.log("data" , data);
-    //     const image = data.image[0];
-    //     const formData = new FormData();
-    //     formData.append('image', image);
-    //     const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
-    //     fetch(url, {
-    //         method: 'POST',
-    //         body: formData
-    //     })
-    //     .then(res=>res.json())
-    //     .then(result =>{
+        const image = data.image[0];
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+        .then(res=>res.json())
+        .then(result =>{console.log('imgbb' , result);})
     //         if(result.success){
     //             const img = result.data.url;
     //             const doctor = {
@@ -92,7 +92,7 @@ const AddProduct = () => {
                     </label>
                     <input
                         type="number"
-                        placeholder="Your Email"
+                        placeholder="Enter Product Price"
                         className="input input-bordered w-full max-w-xs"
                         {...register("price", {
                             required: {
@@ -150,6 +150,26 @@ const AddProduct = () => {
                         
                     </label>
                 </div>
+
+                <div className="form-control w-full max-w-xs">
+                    <label className="label">
+                        <span className="label-text">Product Description</span>
+                    </label>
+                    <input
+                        type="textarea"
+                        placeholder="Type Description"
+                        className="input input-bordered w-full max-w-xl"
+                        {...register("description", {
+                            required: {
+                                value: true,
+                                message: 'Info is Required'
+                            }
+                        })}
+                    />
+                    <label className="label">
+                        {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description.message}</span>}
+                    </label>
+                </div>
            
 
                 <div className="form-control w-full max-w-xs">
@@ -167,7 +187,7 @@ const AddProduct = () => {
                         })}
                     />
                     <label className="label">
-                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                        {errors.image?.type === 'required' && <span className="label-text-alt text-red-500">{errors.image.message}</span>}
                     </label>
                 </div>
 
