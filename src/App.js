@@ -18,6 +18,8 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrder from './Pages/Dashboard/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile.js';
 import MyReview from './Pages/Dashboard/MyReview.js';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
+import AllUsers from './Pages/Dashboard/AllUsers';
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route  path='review' element={<MyReview></MyReview>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='allOrders' element={<ManageAllOrders></ManageAllOrders>}></Route>
+          <Route path='allUsers' element={<AllUsers></AllUsers>}></Route>
 
         </Route>
         <Route path='review' element={<MyReview></MyReview>}></Route>
