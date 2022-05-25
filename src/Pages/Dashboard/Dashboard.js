@@ -24,7 +24,7 @@ const DashBoard = () => {
                         {/* <!-- Sidebar content here --> */}
                         { !admin && <li><Link to="/dashboard">My Order</Link></li>}
                         { !admin && <li><NavLink to="/dashboard/review">Review </NavLink></li>}
-                        { admin && <li><NavLink to="/dashboard/profile">My Profile</NavLink></li>}
+                        { <li><NavLink to="/dashboard/profile">My Profile</NavLink></li>}
                         { admin && <li><NavLink to="/dashboard/allOrders">Manage All Orders</NavLink></li>}
                         { admin && <li><NavLink to="/dashboard/allUsers">Make Admin</NavLink></li>}
                         { admin && <li><NavLink to="/dashboard/addProduct">Add a Product</NavLink></li>}
