@@ -1,13 +1,11 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
-import Loading from '../Shared/Loading';
+
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    // const { data: services, isLoading } = useQuery('services', () => fetch('http://localhost:5000/service').then(res => res.json()))
 
     const imageStorageKey='32dcff4e41b891e23cefa5324ac64d73';
 
@@ -23,43 +21,42 @@ const AddProduct = () => {
             body: formData
         })
         .then(res=>res.json())
-        .then(result =>{console.log('imgbb' , result);})
-    //         if(result.success){
-    //             const img = result.data.url;
-    //             const doctor = {
-    //                 name: data.name,
-    //                 email: data.email,
-    //                 specialty: data.specialty,
-    //                 img: img
-    //             }
-    //             // send to your database 
-    //             fetch('http://localhost:5000/doctor', {
-    //                 method: 'POST',
-    //                 headers: {
-    //                     'content-type': 'application/json',
-    //                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    //                 },
-    //                 body: JSON.stringify(doctor)
-    //             })
-    //             .then(res =>res.json())
-    //             .then(inserted =>{
-    //                 if(inserted.insertedId){
-    //                     toast.success('Doctor added successfully')
-    //                     reset();
-    //                 }
-    //                 else{
-    //                     toast.error('Failed to add the doctor');
-    //                 }
-    //             })
+        .then(result =>{
+            if(result.success){
+                const img = result.data.url;
+                const parts = {
+                    name: data.name,
+                    price: data.price,
+                    stock: data.stock,
+                    minOrder:data.minOrder,
+                    description:data.description,
+                    img: img
+                }
+                // send to your database 
+                fetch('http://localhost:5000/parts', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    },
+                    body: JSON.stringify(parts)
+                })
+                .then(res =>res.json())
+                .then(inserted =>{
+                    if(inserted.insertedId){
+                        toast.success('Product added successfully')
+                        reset();
+                    }
+                    else{
+                        toast.error('Failed to add the Product');
+                    }
+                })
 
-    //         }
+            }
             
-    //     })
-    // }
-
-    // if (isLoading) {
-    //     return <Loading></Loading>
+        })
     }
+
 
     return (
         <div>
