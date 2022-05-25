@@ -6,12 +6,14 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB9hkvi0UibH1sciYziCaWmVd-eVHWUcLk",
-  authDomain: "sunway-auto-parts.firebaseapp.com",
-  projectId: "sunway-auto-parts",
-  storageBucket: "sunway-auto-parts.appspot.com",
-  messagingSenderId: "600921466795",
-  appId: "1:600921466795:web:cf25692c85a870cee754ee"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authdomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
+
+  
 
 };
 

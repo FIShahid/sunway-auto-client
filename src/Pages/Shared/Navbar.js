@@ -17,7 +17,7 @@ const Navbar = () => {
 
         {/* <li><NavLink to="product">Product</NavLink></li> */}
 
-        <li><NavLink to="review">Review</NavLink></li>
+        <li><NavLink to="reviews">Review</NavLink></li>
 
         <li><NavLink to="blog">Blog</NavLink></li>
 

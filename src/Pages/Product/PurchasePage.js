@@ -67,7 +67,7 @@ const PurchasePage = () => {
 
         // post to server
 
-        fetch('http://localhost:5000/orders', {
+        fetch('http://localhost:5000/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
