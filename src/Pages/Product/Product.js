@@ -17,7 +17,7 @@ const Product = ({ product }) => {
                 <h4 className='px-12 mt-4 text-xl font-bold text-info'>{name}</h4>
                 <h5 className='text-warning font-bold px-12'>Price: ${price}</h5>
                 <h5 className='text-black font-bold px-12'>Available Stock: {stock}</h5>
-                <h5 className='text-error font-bold px-12'>Minimum Order: ${minOrder}</h5>
+                <h5 className='text-error font-bold px-12'>Minimum Order: {minOrder}</h5>
                 
                     <p className='px-12'>Description: {description}</p>
                 <div className="card-body items-center text-center">
