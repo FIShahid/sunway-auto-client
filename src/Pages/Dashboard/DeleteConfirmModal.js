@@ -1,10 +1,10 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteConfirmModal = ({deletingDoctor, refetch, setDeletingProduct}) => {
-    const {name, email} = deletingDoctor;
-    const handleDelete = () => {
-        fetch(`http://localhost:5000/parts/${email}`, {
+const DeleteConfirmModal = ({deletingProduct, refetch, setDeletingProduct}) => {
+    const {_id, name, email} = deletingProduct;
+    const handleDelete = (_id) => {
+        fetch(`http://localhost:5000/parts/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -28,7 +28,7 @@ const DeleteConfirmModal = ({deletingDoctor, refetch, setDeletingProduct}) => {
                     <h3 class="font-bold text-lg text-red-500">Are you sure you want to delete  ${name}!</h3>
                     <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
                     <div class="modal-action">
-                    <button onClick={() => handleDelete()} class="btn btn-xs btn-error">Delete</button>
+                    <button onClick={() => handleDelete(_id)} class="btn btn-xs btn-error">Delete</button>
                         <label for="delete-confirm-modal" class="btn btn-xs">Cancel</label>
                     </div>
                 </div>

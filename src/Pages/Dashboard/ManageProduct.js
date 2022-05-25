@@ -40,7 +40,7 @@ const ManageProduct = () => {
                 </table>
             </div>
             {deletingProduct && <DeleteConfirmModal
-                deletingDoctor={deletingProduct}
+                deletingProduct={deletingProduct}
                 refetch={refetch}
                 setDeletingProduct={setDeletingProduct}
             ></DeleteConfirmModal>}
