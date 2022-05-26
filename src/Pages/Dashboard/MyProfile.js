@@ -48,7 +48,7 @@ const MyProfile = () => {
       <div>
         <div className="mt-5 card w-96 bg-base-100 shadow-xl rounded-none">
           <div className="card-body">
-            <h2 className="card-title">Add or Update your information here.</h2>
+            <h2 className="card-title">Add information here.</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               <input  {...register("customerName")} value={user.displayName} type="text" placeholder="" className="hidden input input-bordered input-secondary w-full max-w-xs rounded-none" /><input  {...register("email")} type="text" value={user.email} placeholder="" className="  hidden input input-bordered input-secondary w-full max-w-xs rounded-none" />
               <label htmlFor="">Education</label>
