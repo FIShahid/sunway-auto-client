@@ -29,7 +29,7 @@ const PurchasePage = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/parts/${partsId}`;
+        const url = `https://thawing-fortress-89625.herokuapp.com/parts/${partsId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -67,7 +67,7 @@ const PurchasePage = () => {
 
         // post to server
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://thawing-fortress-89625.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

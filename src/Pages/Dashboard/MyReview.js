@@ -7,7 +7,7 @@ const MyReview = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = 'http://localhost:5000/review'
+        const url = 'https://thawing-fortress-89625.herokuapp.com/review'
         fetch(url,{ 
             method: 'POST',
             headers:{

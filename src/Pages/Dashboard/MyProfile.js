@@ -10,7 +10,7 @@ const MyProfile = () => {
   const[datas,setDatas]=useState([])
   const onSubmit = userData => {
       console.log(userData);
-   const url = 'http://localhost:5000/profile';
+   const url = 'https://thawing-fortress-89625.herokuapp.com/profile';
         
     fetch(url, {
         method: 'POST',
@@ -29,7 +29,7 @@ const MyProfile = () => {
             else{
               alert('user exists')
             }
-            fetch(`http://localhost:5000/profile/${user.email}`)
+            fetch(`https://thawing-fortress-89625.herokuapp.com/profile/${user.email}`)
             .then(res=>res.json())
             .then(data=>setDatas(data))
             

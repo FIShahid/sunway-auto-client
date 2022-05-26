@@ -20,11 +20,11 @@ const Portfolio = () => {
                             
                             
                             <div class="flex flex-col w-full border-opacity-50">
-                                <div class="grid h-20 card bg-base-300 rounded-box place-items-center"><a className="text-purple-500 font-bold link-hover" href="https://warehouse-management-c429a.web.app/"> Electronic Warehouse</a></div>
+                                <div class="grid h-20 card bg-base-300 rounded-box place-items-center"><a className="text-purple-500 font-bold link-hover"  href="https://warehouse-management-c429a.web.app/"> Electronic Warehouse</a></div>
                                 <div class="divider"></div>
-                                <div class="grid h-20 card bg-base-300 rounded-box place-items-center"><a className="text-purple-500 font-bold link-hover" href="https://adventure-traveller.firebaseapp.com/">Adventure Traveler</a></div>
+                                <div class="grid h-20 card bg-base-300 rounded-box place-items-center"><a className="text-purple-500 font-bold link-hover"  href="https://adventure-traveller.firebaseapp.com/">Adventure Traveler</a></div>
                                 <div class="divider"></div>
-                                <div class="grid h-20 card bg-base-300 rounded-box place-items-center"><a className="text-purple-500 font-bold link-hover" href="https://adventure-traveller.firebaseapp.com/">Sunway Auto Parts</a></div>
+                                <div class="grid h-20 card bg-base-300 rounded-box place-items-center"><a className="text-purple-500 font-bold link-hover" href="https://sunway-auto-parts.web.app/portfolio">Sunway Auto Parts</a></div>
                             </div>
                         </div>
 

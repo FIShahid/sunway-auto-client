@@ -6,7 +6,7 @@ import ProductRow from './ProductRow';
 
 const ManageProduct = () => {
     const [deletingProduct, setDeletingProduct] = useState(null);
-    const {data: products, isLoading , refetch} = useQuery('products', ()=>fetch('http://localhost:5000/parts').then(res => res.json()));
+    const {data: products, isLoading , refetch} = useQuery('products', ()=>fetch('https://thawing-fortress-89625.herokuapp.com/parts').then(res => res.json()));
 
     if(isLoading) {
         return <Loading></Loading>

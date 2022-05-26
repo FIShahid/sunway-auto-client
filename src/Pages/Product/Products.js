@@ -7,7 +7,7 @@ const Products = () => {
     
 
     useEffect(()=>{
-        const url = 'http://localhost:5000/parts'
+        const url = 'https://thawing-fortress-89625.herokuapp.com/parts'
         fetch(url, {
             method: 'GET',
             headers: {

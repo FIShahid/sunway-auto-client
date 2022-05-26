@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteConfirmModal = ({deletingProduct, refetch, setDeletingProduct}) => {
     const {_id, name, email} = deletingProduct;
     const handleDelete = (_id) => {
-        fetch(`http://localhost:5000/parts/${_id}`, {
+        fetch(`https://thawing-fortress-89625.herokuapp.com/parts/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

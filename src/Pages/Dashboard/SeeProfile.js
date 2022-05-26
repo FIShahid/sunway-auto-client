@@ -8,7 +8,7 @@ const SeeProfile = () => {
 
     const navigate = useNavigate()
 
-    const { data: profile, isLoading } = useQuery('profile', () => fetch('http://localhost:5000/profile', {
+    const { data: profile, isLoading } = useQuery('profile', () => fetch('https://thawing-fortress-89625.herokuapp.com/profile', {
         method: 'GET',
         headers: {
             'content-type': 'application/json',

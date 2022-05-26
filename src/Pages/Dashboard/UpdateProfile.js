@@ -29,7 +29,7 @@ const UpdateProfile = () => {
         navigate('dashboard/myProfile')
 
         // send data to the server:
-        const url = `http://localhost:5000/profile/${uId}`
+        const url = `https://thawing-fortress-89625.herokuapp.com/profile/${uId}`
         fetch(url, {
             method: 'PUT',
             headers: {
