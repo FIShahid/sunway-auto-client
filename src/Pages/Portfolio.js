@@ -24,7 +24,7 @@ const Portfolio = () => {
                                 <div class="divider"></div>
                                 <div class="grid h-20 card bg-base-300 rounded-box place-items-center"><a className="text-purple-500 font-bold link-hover"  href="https://adventure-traveller.firebaseapp.com/">Adventure Traveler</a></div>
                                 <div class="divider"></div>
-                                <div class="grid h-20 card bg-base-300 rounded-box place-items-center"><a className="text-purple-500 font-bold link-hover" href="https://sunway-auto-parts.web.app/portfolio">Sunway Auto Parts</a></div>
+                                <div class="grid h-20 card bg-base-300 rounded-box place-items-center"><a className="text-purple-500 font-bold link-hover" href="https://sunway-auto-parts.web.app/">Sunway Auto Parts</a></div>
                             </div>
                         </div>
 

@@ -81,7 +81,7 @@ const PurchasePage = () => {
             .then(data => {
                 console.log(data)
                 if (data.insertedId) {
-                    toast('success')
+                    toast.success('You have successfully placed your Order ')
                 }
             })
 
@@ -99,23 +99,23 @@ const PurchasePage = () => {
 
     return (
         <div className='w-2/3 mx-auto'>
-            <div className="hero lg:w-max-lg bg-base-200">
-                <div className="hero-content text-left flex-col lg:flex-row ">
-                    <img src={img} className="max-w-sm rounded-lg shadow-2xl" alt="" />
+            <div className="hero lg:w-max-lg bg-base-100">
+                <div className="hero-content text-left flex-col gap-5 lg:flex-row ">
+                    <img src={img} className=" rounded-lg shadow-2xl" alt="" />
                     <div>
 
 
 
                         <form onSubmit={handleQuantity} action="">
-                            <h1 className="text-3xl font-bold ">{name}</h1>
-                            <p className="py-1">Your Name : {user.displayName} </p>
-                            <p className="py-1">Your Email : {user.email} </p>
-                            <p className="py-1">Minimum order : {minOrder}</p>
+                            <h1 className="text-2xl font-bold text-info ">{name}</h1>
+                            <p className="py-1 font-bold">Your Name : {user.displayName} </p>
+                            <p className="py-1 font-bold">Your Email : {user.email} </p>
+                            <p className="py-1 text-purple-600">Minimum order : {minOrder}</p>
                             <input type="number" name="quantity" placeholder='Type Order Quantity' id="" onChange={handleQuantityChange} required />
                             {showErrorMessage}
                             <br /><br />
-                            <p className="py-1">Available order : {stock} </p>
-                            <p className="py-1">Price per Unit : {price} </p><br />
+                            <p className="py-1 text-green-700">Available order : {stock} </p>
+                            <p className="py-1 text-warning font-bold">Price per Unit : $ {price} </p><br />
                             <input type="text" name="address" placeholder='Type address' id="" required /><br /><br />
                             <input type="number" name="phone" placeholder='Type phone' id="" required /><br /><br />
                             <input disabled={newparsedQuantity < minParsedQuantity || newparsedQuantity > availableParsedQuantity} className="btn btn-sm" type="submit" value=" Place Order" />

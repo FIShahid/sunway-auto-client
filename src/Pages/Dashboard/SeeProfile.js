@@ -57,7 +57,7 @@ const SeeProfile = () => {
                                     <td> {p.education} </td>
                                     <td> {p.location} </td>
                                     <td> {p.linkdin} </td>
-                                    <td> <Link to={`/dashboard/updateProfile/${p._id}`}> <button className='btn btn-xs'>Update</button></Link> </td>
+                                    {/* <td> <Link to={`/dashboard/updateProfile/${p._id}`}> <button className='btn btn-xs'>Update</button></Link> </td> */}
                                 </tr>
 
                             )

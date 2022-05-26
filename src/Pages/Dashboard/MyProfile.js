@@ -39,14 +39,14 @@ const MyProfile = () => {
   }
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl rounded-none">
+      <div className="card  bg-base-100 shadow-xl rounded-none">
         <div className="card-body">
-          <h2 className="card-title">{user.displayName}</h2>
-          <p>{user.email}</p>
+          <h2 className=" font-bold text-center">User Name: {user.displayName}</h2>
+          <p className="text-center font"> User Email: {user.email}</p>
         </div>
       </div>
       <div>
-        <div className="mt-5 card w-96 bg-base-100 shadow-xl rounded-none">
+        <div className="mt-5 text-center w-96 bg-base-100 shadow-xl rounded-none">
           <div className="card-body">
             <h2 className="card-title">Add information here.</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
