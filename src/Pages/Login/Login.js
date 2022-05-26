@@ -27,7 +27,7 @@ const Login = () => {
     useEffect( () =>{
         if (token) {
             navigate(from, { replace: true });
-            navigate('/')
+            // navigate('/')
         }
     }, [token, from, navigate])
 
