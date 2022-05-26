@@ -27,6 +27,7 @@ import Payment from './Pages/Dashboard/Payment';
 import SeeProfile from './Pages/Dashboard/SeeProfile';
 import UpdateProfile from './Pages/Dashboard/UpdateProfile';
 import Welcome from './Pages/Dashboard/Welcome';
+import Portfolio from './Pages/Portfolio';
 
 
 function App() {
@@ -54,7 +55,7 @@ function App() {
         {/* ////////////////////////////////////////////////////////////////////// */}
         <Route path='reviews' element={<MyReview></MyReview>}></Route>
         <Route path='blog' element={<Blog></Blog>}></Route>
-        <Route path='about' element={<About></About>}></Route>
+        <Route path='portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signUp' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
