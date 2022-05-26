@@ -14,6 +14,26 @@ const MyOrder = () => {
                 .then(data => setMyOrders(data))
         }
     }, [user])
+
+    const handleDelete = (_id) => {
+        const proceed = window.confirm('Are you sure?');
+        if (proceed) {
+            const url = `https://thawing-fortress-89625.herokuapp.com/order/${user._id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    // const remaining = myOrders
+                    // .filter(service => service._id !== id);
+                    setMyOrders(data);
+                })
+        }
+    }
+
+
+
     return (
         <div>
             <h2>My Order : {myOrders.length}</h2>
@@ -50,7 +70,7 @@ const MyOrder = () => {
                                         <p>Transaction id: <span className='text-success'>{orderList.transactionId}</span></p>
                                     </div>}
                                 </td>
-                                <td>{!orderList.paid && <button button className='btn btn-xs btn-error'>Cancel</button>}</td>
+                                <td>{!orderList.paid && <button onClick={() => handleDelete(user._id)} button className='btn btn-xs btn-error'>Cancel</button>}</td>
                             </tr>)
                         }
                     

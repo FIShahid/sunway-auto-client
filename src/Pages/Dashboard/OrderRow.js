@@ -1,25 +1,21 @@
 import React from 'react';
 
 
-const ProductRow = ({ product, index, refetch, setDeletingProduct }) => {
-    const { name, img , stock   } = product;
+const OrderRow = ({ order, index, refetch, setDeletingProduct }) => {
+    const { partsName, userName , orderQuantity , paid , transactionId , address , userEmail   } = order;
     
     return (
         <tr>
             <th>{index + 1}</th>
-            <td><div class="avatar">
-            <div class="w-14 rounded">
-                    <img src={img} alt={name} />
-                </div>
-            </div></td>
-            <td>{name}</td>
+            <td>{userName}</td>
+            <td>{partsName}</td>
+            <td>{orderQuantity}</td>
+            
            
-                <td>{stock}</td>
-            {/* <td>
-            <label onClick={() => setDeletingProduct(product)} for="delete-confirm-modal" class="btn btn-xs btn-error">Delete</label>
-            </td> */}
+           <td>{!transactionId &&  <button class="btn btn-sm btn-error">Pending</button>} {transactionId &&  <button class="btn btn-sm btn-success">Shipped</button>}</td>
+           {/* <td>{transactionId &&  <button class="btn btn-sm">Shipped</button>}</td> */}
         </tr>
     );
 };
 
-export default ProductRow;
+export default OrderRow;

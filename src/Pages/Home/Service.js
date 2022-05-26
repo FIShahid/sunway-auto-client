@@ -6,7 +6,7 @@ const Service = () => {
         <div className="mt-6 mb-6">
             <h2 className="mt-6 mb-6 text-center font-bold text-3xl">Your One-Stop Vehicle Parts and Accessories Partner</h2>
             <div class=" hero min-h-screen " 
-            style={{  background:`url(${bg2}) `   }} >
+            style={{  background:`url(${bg2}) no-repeat `   }} >
                 <div class="  hero-overlay bg-opacity-60"></div>
                 <div class="hero-content text-center text-neutral-content">
                     <div class="max-w-md">

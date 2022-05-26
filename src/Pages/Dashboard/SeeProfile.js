@@ -20,10 +20,10 @@ const SeeProfile = () => {
         return <Loading></Loading>
     }
 
-    // const navigateUpdate = (id) => {
+    const navigateUpdate = (id) => {
 
-    //     navigate(`/dashboard/updateProfile/${id}`)
-    // }
+        navigate(`/dashboard/updateProfile/${id}`)
+    }
 
 
     return (
@@ -39,7 +39,7 @@ const SeeProfile = () => {
                             <th>email</th>
                             <th>education</th>
                             <th>location</th>
-                            <th>linkdin</th>
+                            <th>linkedn</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -57,7 +57,7 @@ const SeeProfile = () => {
                                     <td> {p.education} </td>
                                     <td> {p.location} </td>
                                     <td> {p.linkdin} </td>
-                                    {/* <td> <Link to={`/dashboard/updateProfile/${p._id}`}> <button className='btn btn-xs'>Update</button></Link> </td> */}
+                                    <td> <button onClick={()=>navigateUpdate(p._id)} className='btn btn-xs'>Update</button> </td>
                                 </tr>
 
                             )

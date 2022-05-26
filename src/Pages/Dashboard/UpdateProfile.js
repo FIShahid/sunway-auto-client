@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 
-const UpdateProfile = () => {
+const UpdateProfile = (_id) => {
 
     const [user] = useAuthState(auth)
 
@@ -58,10 +58,10 @@ const UpdateProfile = () => {
     }
     return (
         <div>
-            <div class="artboard lg:w-1/4 mx-auto border border-emerald-400 p-10 rounded-xl mt-9">
+            <div class=" lg:w-2/4 mx-auto border  p-10 rounded-xl mt-9">
 
 
-                <h2 className='text-emerald-400 font-bold text-3xl mb-10 uppercase'>Update profile </h2>
+                <h2 className='text-info font-bold text-3xl mb-10 uppercase'>Update profile </h2>
 
                 <p className='text-red-400'> ID:{uId}</p><br />
 
