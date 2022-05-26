@@ -30,6 +30,7 @@ const MyOrder = () => {
                             <th>Price/unit</th>
                             <th>Action</th>
                             <th>Payment</th>
+                            <th>Cancel</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,6 +50,7 @@ const MyOrder = () => {
                                         <p>Transaction id: <span className='text-success'>{orderList.transactionId}</span></p>
                                     </div>}
                                 </td>
+                                <td>{!orderList.paid && <button button className='btn btn-xs btn-error'>Cancel</button>}</td>
                             </tr>)
                         }
                     

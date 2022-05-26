@@ -26,6 +26,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import Payment from './Pages/Dashboard/Payment';
 import SeeProfile from './Pages/Dashboard/SeeProfile';
 import UpdateProfile from './Pages/Dashboard/UpdateProfile';
+import Welcome from './Pages/Dashboard/Welcome';
 
 
 function App() {
@@ -37,7 +38,8 @@ function App() {
         <Route path='/parts/:partsId' element={<RequireAuth><PurchasePage></PurchasePage></RequireAuth>}></Route>
         {/* //////////////////////NESTED ROUTES////////////////////////// */}
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
-          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route index element={<Welcome></Welcome>}></Route>
+          <Route path='myorder' element={<MyOrder></MyOrder>}></Route>
           <Route  path='review' element={<MyReview></MyReview>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
           <Route path='seeProfile' element={<SeeProfile></SeeProfile>}></Route>

@@ -26,6 +26,7 @@ const MyReview = () => {
     }
     return (
         <div>
+            <h2 className="text-center mt-8 mb-6 text-3xl font-bold">Add Your Review</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="lg:w-max-lg ">
@@ -40,7 +41,12 @@ const MyReview = () => {
                                     <input className='mb-2 ' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
                                 </div>
                                 <div className="form-control">
-                                <input className='mb-2' placeholder='Ratings' type="number" {...register("rating")} />
+                                <label className="label">
+                                        <span className="label-text">Give a Ratings from 1-5</span>
+                                    </label>
+                                <input className='mb-2' placeholder='Ratings' type="number"
+                                 {...register("rating")}
+                                 />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -49,7 +55,7 @@ const MyReview = () => {
                                     <textarea className='mb-2' placeholder='Description' {...register("description")} />
                                 </div>
                                 <div className="form-control mt-6">
-                                <input onClick={handleAddSubmit} type="submit" value="Add Review" className='btn'style={{ backgroundColor: '#66bb6a' }} />
+                                <input onClick={handleAddSubmit} type="submit" value="Add Review" className='btn btn-success' />
                                 </div>
                             </div>
                         </div>

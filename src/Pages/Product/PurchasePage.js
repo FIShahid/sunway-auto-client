@@ -99,8 +99,8 @@ const PurchasePage = () => {
 
     return (
         <div className='w-2/3 mx-auto'>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content text-left flex-col lg:flex-row border border-gray-500">
+            <div className="hero lg:w-max-lg bg-base-200">
+                <div className="hero-content text-left flex-col lg:flex-row ">
                     <img src={img} className="max-w-sm rounded-lg shadow-2xl" alt="" />
                     <div>
 
@@ -118,7 +118,7 @@ const PurchasePage = () => {
                             <p className="py-1">Price per Unit : {price} </p><br />
                             <input type="text" name="address" placeholder='Type address' id="" required /><br /><br />
                             <input type="number" name="phone" placeholder='Type phone' id="" required /><br /><br />
-                            <input disabled={newparsedQuantity < minParsedQuantity || newparsedQuantity > availableParsedQuantity} className="btn btn-sm" type="submit" value=" place" />
+                            <input disabled={newparsedQuantity < minParsedQuantity || newparsedQuantity > availableParsedQuantity} className="btn btn-sm" type="submit" value=" Place Order" />
                         </form>
 
                     </div>
